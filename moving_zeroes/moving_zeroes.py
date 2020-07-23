@@ -6,7 +6,7 @@ Returns: a List of integers
 def moving_zeroes(arr):
     # Plan
     # A: for loop 
-    for item in arr[0:]:
+    for item in arr:
         # establish index of item
         i = arr.index(item)
         if item is not 0:
