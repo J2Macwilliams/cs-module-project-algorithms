@@ -26,9 +26,11 @@ def product_of_all_other_numbers(arr):
 
 end_time = time.time()
 #First Pass
+# runtime: 4.0531158447265625e-06 seconds
 # Runtime complexity is O(n^2), as mapping to gain new list of args to use
 
 # Better Solution
+# runtime: 1.1920928955078125e-06 seconds
 # Runtime Complexity: O(n) - realized I didn't need another array. 
 
 product_of_all_other_numbers([7, 9, 1, 8, 6, 7, 8, 8, 7, 10])
