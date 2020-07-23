@@ -10,21 +10,18 @@ def eating_cookies(n):
     # except with three options
     # try Tribonacci sequence
     # set up base case
-    # if cookie is greater than amount of cookies:
-    if n == 0:
-        return 0
-    # if cookie is equal to one
-    elif n == 1:
+    # if cookie is 1: only one way to eat them
+    if n < 2:
         return 1
-    # if cookie is equal to two
-    elif n == 2:
-        return 1
-    # if cookie is equal to three
-    elif n ==3:
-        return 1
-    # create recursive call
+    # if cookies are 2: there are 2 ays to eat them
+    if n == 2:
+        return 2
+    # if cookies are 3: there are 4 ways to eat them
+    if n == 3 :
+        return 4
+    # # create recursive call
     else:
-        eating_cookies(n - 1) + eating_cookies(n - 2) + eating_cookies(n - 3)
+        return eating_cookies(n - 1) + eating_cookies(n - 2) + eating_cookies(n - 3)
 
 
 if __name__ == "__main__":
