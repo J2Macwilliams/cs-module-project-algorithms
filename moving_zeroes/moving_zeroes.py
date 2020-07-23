@@ -6,10 +6,10 @@ Returns: a List of integers
 def moving_zeroes(arr):
     # Plan
     # A: for loop 
-    for item in arr[0:]:
+    for item in arr: # O(n)
         # establish index of item
         i = arr.index(item)
-        if item is not 0:
+        if item is not 0: # O(n)
             # pop item from list
             arr.pop(i)
             # insert it at first index
@@ -18,6 +18,10 @@ def moving_zeroes(arr):
     # return changed array
     return arr
 
+#First Pass
+# Runtime Complexity: O(n^2), check constitutes 2nd linear check. 
+# #Does not take up another list so..
+# Space Complexity: O(1)
 
 if __name__ == '__main__':
     # Use the main function here to test out your implementation
