@@ -2,6 +2,9 @@
 Input: a List of integers
 Returns: a List of integers
 '''
+import time
+
+start_time = time.time()
 def product_of_all_other_numbers(arr):
     # Plan
     # create a new_array
@@ -14,20 +17,27 @@ def product_of_all_other_numbers(arr):
         return result
     # loop through give arr to get num
     for i in range(0, len(arr)): # O(n)
-        my_args = [x for x in arr] # O(n)
-        my_args.pop(i)
+        my_item = arr.pop(i)
         # append to value to new array 
-        new_array.append(my_product(*my_args))
-        my_args.insert(i, arr[i])
+        new_array.append(my_product(*arr))
+        arr.insert(i, my_item)
     # return new_array
     return new_array
-    
+
+end_time = time.time()
 #First Pass
 # Runtime complexity is O(n^2), as mapping to gain new list of args to use
 
-if __name__ == '__main__':
-    # Use the main function to test your implementation
-    # arr = [1, 2, 3, 4, 5]
-    arr = [2, 6, 9, 8, 2, 2, 9, 10, 7, 4, 7, 1, 9, 5, 9, 1, 8, 1, 8, 6, 2, 6, 4, 8, 9, 5, 4, 9, 10, 3, 9, 1, 9, 2, 6, 8, 5, 5, 4, 7, 7, 5, 8, 1, 6, 5, 1, 7, 7, 8]
+# Better Solution
+# Runtime Complexity: O(n) - realized I didn't need another array. 
 
-    print(f"Output of product_of_all_other_numbers: {product_of_all_other_numbers(arr)}")
+product_of_all_other_numbers([7, 9, 1, 8, 6, 7, 8, 8, 7, 10])
+
+print(f"runtime: {end_time - start_time} seconds")
+
+# if __name__ == '__main__':
+#     # Use the main function to test your implementation
+#     # arr = [1, 2, 3, 4, 5]
+#     arr = [2, 6, 9, 8, 2, 2, 9, 10, 7, 4, 7, 1, 9, 5, 9, 1, 8, 1, 8, 6, 2, 6, 4, 8, 9, 5, 4, 9, 10, 3, 9, 1, 9, 2, 6, 8, 5, 5, 4, 7, 7, 5, 8, 1, 6, 5, 1, 7, 7, 8]
+
+#     print(f"Output of product_of_all_other_numbers: {product_of_all_other_numbers(arr)}")
