@@ -35,11 +35,15 @@ def eating_cookies(n, cache=None):
 
     return cache[n]
 
-## First pass Solution times:
+## First pass 
+# Runtime Complexity: O(3^n)
+# Solution times:
 # eating_cookies(10) # runtime: 3.0994415283203125e-05 seconds
 # eating_cookies(30) #runtime: 5.754578113555908 seconds
 
 ## Better Solutions with cache
+# Runtime Complexity: O(3^n) initially, however, cache changes time expended as Cookie jar grows, able to access previous calls.
+# Solution times:
 # eating_cookies(10) # runtime: 0.00013184547424316406 seconds
 # eating_cookies(30) # runtime: 0.00031375885009765625 seconds
 

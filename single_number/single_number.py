@@ -12,9 +12,11 @@ def single_number(arr):
     # count similar elements in list
     # filter singular item out
     # map filtered item to new list
-    new_arr = [x for x in arr if arr.count(x) % 2 != 0]
+    new_arr = [x for x in arr if arr.count(x) % 2 != 0] # O(n)
     # return new list item
     return new_arr[0]
+
+# Runtime Complexity: O(n), only has to map & filter out a single item, but could be a very long list.
 
 if __name__ == '__main__':
     # Use the main function to test your implementation

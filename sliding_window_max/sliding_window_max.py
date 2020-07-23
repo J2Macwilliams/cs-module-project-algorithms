@@ -2,6 +2,10 @@
 Input: a List of integers as well as an integer `k` representing the size of the sliding window
 Returns: a List of integers
 '''
+import time
+
+start_time = time.time()
+
 def sliding_window_max(nums, k):
     # Plan
     # create a new_array
@@ -15,9 +19,9 @@ def sliding_window_max(nums, k):
     # numbers have a start and an end 
     #  use some sort of iterator I guess
     # k must be smaller  or equal than nums
-    while end <= len(nums):
+    while end <= len(nums): # O(n)
         # k is a slice of nums
-        my_window = [ x for x in nums[start:end]]
+        my_window = [ x for x in nums[start:end]] # O(n)
         # max identifies the highest
         my_max = max(my_window)
         new_array.append(my_max)
@@ -27,6 +31,14 @@ def sliding_window_max(nums, k):
     
     # return max items
     return new_array
+end_time = time.time()
+
+sliding_window_max([1, 3, -1, -3, 5, 3, 6, 7], 3) # runtime: 1.4066696166992188e-05 seconds
+
+print(f"runtime: {end_time - start_time} seconds")
+
+#First Pass
+# Runtime complexity: o(n^2), however the second (n) is based off the size of k which dramatically shortens the time.
 
 if __name__ == '__main__':
     # Use the main function here to test out your implementation 

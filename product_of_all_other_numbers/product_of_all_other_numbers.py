@@ -13,15 +13,17 @@ def product_of_all_other_numbers(arr):
             result *= x
         return result
     # loop through give arr to get num
-    for i in range(0, len(arr)):
-        my_args = [x for x in arr]
+    for i in range(0, len(arr)): # O(n)
+        my_args = [x for x in arr] # O(n)
         my_args.pop(i)
         # append to value to new array 
         new_array.append(my_product(*my_args))
         my_args.insert(i, arr[i])
     # return new_array
     return new_array
-
+    
+#First Pass
+# Runtime complexity is O(n^2), as mapping to gain new list of args to use
 
 if __name__ == '__main__':
     # Use the main function to test your implementation
