@@ -3,9 +3,24 @@ Input: a List of integers
 Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
-    # Your code here
-
-    pass
+    # Plan
+    # create a new_array
+    new_array = []
+    # create my_product fn to return args
+    def my_product(*args):
+        result = 1
+        for x in args:
+            result *= x
+        return result
+    # loop through give arr to get num
+    for i in range(0, len(arr)):
+        my_args = [x for x in arr]
+        my_args.pop(i)
+        # append to value to new array 
+        new_array.append(my_product(*my_args))
+        my_args.insert(i, arr[i])
+    # return new_array
+    return new_array
 
 
 if __name__ == '__main__':
