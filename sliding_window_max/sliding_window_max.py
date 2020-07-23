@@ -21,10 +21,10 @@ def sliding_window_max(nums, k):
     # k must be smaller  or equal than nums
     while end <= len(nums): # O(n)
         # window is a slice of nums 
-        new_array.append(max(nums[start:end]))
+        new_array.append(max(nums[start:end])) # O(1)
         # increment start and end
-        start += 1
-        end += 1
+        start += 1 # O(1)
+        end += 1 # O(1)
     
     # return max items
     return new_array
